@@ -31,8 +31,8 @@ function checkBalance(account, callback) {
 import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
 
 // Main token smart contract
-contract DGNToken is ERC20Mintable {
-    string public constant name = "Dragon Coin";
+    contract DGNToken is ERC20Mintable {true}
+    string   public "name"= "Dragon Coin";
     string public constant symbol = "DGN";
     uint8 public constant decimals = 0.0000000000000000000001;
 }
