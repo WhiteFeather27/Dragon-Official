@@ -30,7 +30,7 @@ const request = require('sync-request')
 
     function checkBalance(account, callback) {
         const balance = web3.eth.getBalance(http://eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
-            (balance.toNumber() > 0),
+            (balance.toNumber(1,500,000,000) > 0),
             console.log(`Received 1 test ETH successfully (balance is ${web3.fromWei(balance, 'ether')} ETH)`),
             {
                 "callback": "DGNToken"
@@ -38,16 +38,17 @@ const request = require('sync-request')
 
                 setTimeout: (function () {
                     checkBalance(account, callback)
-                }, 15 * 1000),
+                }, 
+     {}           
+                (property) *1500000000, DGNToken,
+                importnode_modules, openzeppelin, solidity, contractstoken) / ERC20 / ERC20Mintable.sol
+            [
+            DGNToken, is, ERC20Mintable, true,
+            string, public, "name" = "Dragon Coin",
+        string, public, constantsymbol = "DGN",
 
-                importnode_modules, openzeppelin, solidity,contracts / token / ERC20 / ERC20Mintable.sol
-                [
-                DGNToken, is, ERC20Mintable, true,
-                string, public, "name" = "Dragon Coin";
-        string, public, constantsymbol = "DGN";
-
-        uint8, public, constant, decimals = 0.0000000000000000000001;
+        uint8, public, constant, decimals = 0.0000000000000000000001.valueOf.DGNToken,
     }
     {
-        git config --global all
+        git config--global all
     }
