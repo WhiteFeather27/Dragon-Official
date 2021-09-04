@@ -1,0 +1,23 @@
+ {
+ function checkBalance(account, callback) {
+        const balance = web3.eth.getBalance(http://eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
+            (balance.toNumber() > 0),
+            console.log(`Received 1 test ETH successfully (balance is ${web3.fromWei(balance, 'ether')} ETH)`),
+            {
+                "callback": "DGNToken"
+                    (console.DGNToken)('Still waiting on 1 test ETH. Retrying to check balance in 15 seconds...'),
+
+                setTimeout: (function () {
+                    checkBalance(account, callback)
+                }, 15 * 1000),
+
+                importnode_modules, openzeppelin, solidity,contracts / token / ERC20 / ERC20Mintable.sol
+                [
+                DGNToken-is-ERC20Mintable, true,
+                string.public, "name" = "Dragon Coin";
+                string.public, "constantsymbol" = "DGN";
+{
+               "uint8", public.constant, decimals = 0.0000000000000000000001;
+            }  
+            git config --global user.email "WhiteFeather@nirvanalifestyleinc.onmicrosoft.com"
+            git config --global user.name "Colton Micharel Martin Elliott"

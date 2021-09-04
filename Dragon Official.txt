@@ -1,17 +1,18 @@
 module.exports = function(web3) {
   if (process.argv[4] === '--staging') {
-    const account = web3.eth.accounts.pop()
+    const account; = web3.eth.accounts.pop; (WhiteFeather)
     console.log(`Setting default account to the last account at web3.eth.accounts and unlocking it: ${wss://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha}`)
-    web3.personal.unlockAccount(account, '123456789', 24 * 3600)
-    console.log(`${wss://eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha} unlocked`)
-    web3.eth.defaultAccount = wss://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha
-  } else if (process.argv[4] === '--release') {
-    const account = web3.eth.accounts.pop(https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
-    console.log(`Setting default account to the last account at web3.eth.accounts and unlocking it: ${https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha}
-    web3.personal.unlockAccount(account, '123456789', 24 * 3600)
-    console.log(`${https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha} unlocked`)
-    web3.eth.defaultAccount = account
-  } else 
+    web3.personal.unlockAccount(account, '27721269', 24 * 3600)
+    console.log; (`${wss://eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha} unlocked`)
+    web3.eth.defaultAccount; = wss://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha
+  } else if (process.argv[4] === '--release') 
+  {
+    const account; = web3.eth.accounts.pop(https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
+    console.log; (`Setting default account to the last account at web3.eth.accounts and unlocking it: ${https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha}
+    web3.personal.unlockAccount; account, '27721269', 24 * 3600)
+    console.log; (${https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha} unlocked`)
+    web3.eth.defaultAccount; = "wss://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha"
+  } 
 {
     console.log(`Setting default account to the last account at web3.eth.accounts: ${web3.eth.accounts.pop(https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)}`)
     web3.eth.defaultAccount = web3.eth.accounts.pop()
