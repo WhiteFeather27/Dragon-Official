@@ -27,3 +27,19 @@ function checkBalance(account, callback)
     }, 15 * 1000)
   }
 }
+
+{
+Preparing to clone inside a volume
+Installing credential helpers... done
+Cloning into '/code'...
+remote: Enumerating objects: 47, done.
+remote: Counting objects: 100% (47/47), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 47 (delta 16), reused 47 (delta 16), pack-reused 0
+Receiving objects: 100% (47/47), 125.52 KiB | 751.00 KiB/s, done.Receiving objects:  97% (46/47)Receiving objects:  89% (42/47)
+Resolving deltas: 100% (16/16), done.
+Docker socket permission set to allow in container dockerDocker socket permission set to allow in container dockerDocker socket permission set to allow in container docker
+
+}
+
+"HostName=<iothubowner>;SharedAccessKeyName=<DGN>;SharedAccesskey=<sWgjPjHrqEQFLmpUmG/ct2xPTfEvtj4dzi63g9iGjUA=>"
