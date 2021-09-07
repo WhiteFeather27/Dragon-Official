@@ -51,4 +51,5 @@ const request = require('sync-request')
     }
     {
         git config--global all
+        
     }

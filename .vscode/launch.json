@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "attach",
+            "name": "Docker: Attach to Node",
+            "remoteRoot": "RUN |2 BUILDKIT_VERSION=v0.8.2 COMMIT_SHA=v1.22.0-beta.0-7c45056827c1c4e8a84b723e31a3d7b3c518d331 /bin/sh -c echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers # buildkit",
+        },
+        {
             "name": "Launch Program",
             "program": "${workspaceFolder}/app.js",
             "request": "launch",
@@ -52,33 +58,12 @@
             "name": "Launch via NPM",
             "request": "launch",
             "runtimeArgs": 
-            
-            
-            {
+{
+            "jsonrpc","2.0"
+            "id" 
+            "method" "eth_accounts"
+}
                 
-                
-                "curl":
-                        -x, POST,
-                        -H,
-                        
-                "Content-Type: application/json"
-                "jsonrpc": "2.0",
-                "id": [1,]
-                "method": ["eth_subscribe"],
-                "params": []
-                    "newHeads",
-                    
-                        "includeTransactions": true,
-                    
-                
-            }
-
-            "jsonrpc""2.0"
-                            "id" 
-                            "method" "eth_accounts"
-        }
-                
-                    {
             "jsonrpc",
             "2.0",
             "id",
