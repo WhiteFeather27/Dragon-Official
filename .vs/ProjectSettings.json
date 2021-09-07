@@ -80,3 +80,4 @@
     "uint8 public constant.decimal",
     0.0000000000000000000001,
     "git config --global all",
+  "any.statusCode", 300]}
