@@ -26,7 +26,7 @@ function checkBalance(account, callback)
       checkBalance(account, callback)
     }, 15 * 1000)
   }
-}
+}/var/lib/docker/volumes/vsCodeServerVolume-Dragon-Official-kind_hawking/_data
 
 {
 Preparing to clone inside a volume
