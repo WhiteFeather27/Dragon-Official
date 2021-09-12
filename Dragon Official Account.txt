@@ -14,6 +14,9 @@ module.exports = function(callback) {
     checkBalance(account, callback)
    15 * 1000)
 
+function checkBalance(account, callback) 
+  const balance = web3.eth.getBalance(https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
+  if (balance.toNumber(10000000000) > 0) 
 
 function checkBalance(account, callback) 
   const balance = web3.eth.getBalance(https://eth-mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
@@ -26,4 +29,162 @@ function checkBalance(account, callback)
       checkBalance(account, callback)
     }, 15 * 1000)
   }
+}/var/lib/docker/volumes/vsCodeServerVolume-Dragon-Official-kind_hawking/_data
+
+{
+Preparing to clone inside a volume
+Installing credential helpers... done
+Cloning into '/code'...
+remote: Enumerating objects: 47, done.
+remote: Counting objects: 100% (47/47), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 47 (delta 16), reused 47 (delta 16), pack-reused 0
+Receiving objects: 100% (47/47), 125.52 KiB | 751.00 KiB/s, done.Receiving objects:  97% (46/47)Receiving objects:  89% (42/47)
+Resolving deltas: 100% (16/16), done.
+Docker socket permission set to allow in container dockerDocker socket permission set to allow in container dockerDocker socket permission set to allow in container docker
+
 }
+
+"HostName=<iothubowner>;SharedAccessKeyName=<DGN>;SharedAccesskey=<sWgjPjHrqEQFLmpUmG/ct2xPTfEvtj4dzi63g9iGjUA=>"
+
+
+
+.docke**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md 
+ 23  Membership/Dockerfile 
+@@ -0,0 +1,23 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /src
+COPY ["Membership/Membership.csproj", "Membership/"]
+COPY ["Microsoft.Identity.Web/Microsoft.Identity.Web.csproj", "Microsoft.Identity.Web/"]
+RUN dotnet restore "Membership/Membership.csproj"
+COPY . .
+WORKDIR "/src/Membership"
+RUN dotnet build "Membership.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "Membership.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Membership.dll"] 
+  3  Membership/Membership.csproj 
+@@ -2,6 +2,8 @@
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>3802e110-417b-4d5c-9d77-90146df0fc9f</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+@@ -16,6 +18,7 @@
+    <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
+    <PackageReference Include="Microsoft.Graph" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.10.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.1.71" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  12  Membership/Properties/launchSettings.json 
+@@ -36,6 +36,18 @@
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "(unused)"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true,
+      "useSSL": true,
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED": "true",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "https://dotnetfdnmembership.vault.azure.net"
+      }
+    }
+  }
+} 
+  31  azure-pipelines.yml 
+@@ -11,12 +11,19 @@ pr:
+      - rel/*
+
+pool:
+  vmImage: windows-latest
+  vmImage: ubuntu-latest
+
+variables: 
+  BuildConfiguration: Release
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '0d3cc2fe-71c4-459b-ae14-ac93ff043725'
+  imageRepository: 'membership'
+  containerRegistry: 'dotnetfoundation.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core SDK 3.1.x'
+@@ -30,18 +37,16 @@ steps:
+    arguments: install --tool-path . nbgv
+  displayName: Install NBGV tool
+
+- script: nbgv cloud
+- script: ./nbgv cloud
+  displayName: Set Version
+
+- task: DotNetCoreCLI@2
+  displayName: Build and Publish
+
+- task: Docker@2
+  displayName: Build and push an image to container registry
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: Membership/Membership.csproj
+    arguments: '-c $(BuildConfiguration) --output $(build.artifactstagingdirectory)\website\'
+    zipAfterPublish: True
+
+- publish: $(Build.ArtifactStagingDirectory)\website
+  displayName: Publish website artifact
+  artifact: Website
+    command: buildAndPush
+    repository: $(imageRepository)
+    dockerfile: $(dockerfilePath)
+    containerRegistry: $(dockerRegistryServiceConnection)
+    tags: |
+      $(tag)rignore

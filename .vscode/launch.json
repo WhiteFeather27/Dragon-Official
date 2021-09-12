@@ -1,154 +1,66 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "attach",
-            "name": "Docker: Attach to Node",
-            "remoteRoot": "RUN |2 BUILDKIT_VERSION=v0.8.2 COMMIT_SHA=v1.22.0-beta.0-7c45056827c1c4e8a84b723e31a3d7b3c518d331 /bin/sh -c echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers # buildkit",
-        },
-        {
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}"
-            ],
-            "name": "Launch Extension",
-            "outFiles": [
-                "${workspaceFolder}/out/**/*.js"
-            ],
-            "preLaunchTask": "npm",
-            "request": "launch",
-            "type": "pwa-extensionHost"
-        },
-        {
-            "name": "Launch via NPM",
-            "request": "launch",
-            "runtimeArgs": [
-                "run-script",
-                "debug"
-            ],
-            "runtimeExecutable": "npm",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "Electron Main",
-            "program": "${workspaceFolder}/main.js",
-            "request": "launch",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "Launch via NPM",
-            "request": "launch",
-            "runtimeArgs": 
-{
-            "jsonrpc","2.0"
-            "id" 
-            "method" "eth_accounts"
-}
-                
-            "jsonrpc",
-            "2.0",
-            "id",
-            13,
-            "result",
-            [
-                0x26D3C990cF47dD8257863dE388d1f27764f8276a
-            ]
-        }
-                    module.exports = function (callback) {
-                        const account = web3.personal.newAccount('123456789')
-                        console.log(`Created ETH wallet to deploy contracts: ${account
-            } (password is '123456789', don't loose it)`)
-                        console.log(`Requesting 1 ETH to ${account
-            } (http: //eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)`)
-                        const any = request('GET', `http: //eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha}`)
-                        if (any.statusCode >= 300) {
-                            throw new Error('Sorry, Ethereum test faucet request failed: ' + any.body.toString())
-            }
-                        console.log('Requested, waiting on the Ethereum node to sync and then 15 seconds to receive test ETH...')
-                        setTimeout(() => {
-                            checkBalance(account, callback)
-            },
-            15 * 1000)
-        }
-                
-                    function checkBalance(account, callback) {
-                        const balance = web3.eth.getBalance(http: //eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha)
-                            (balance.toNumber(1,
-            500,
-            000,
-            000) > 0),
-                            {
-                                "name": "Launch via NPM",
-                                "request": "launch",
-                                "runtimeArgs": [
-                                    "run-script",
-                                    "debug"
-                                ],
-                                "runtimeExecutable": "npm",
-                                "skipFiles": [
-                                    "<node_internals>/**"
-                                ],
-                                "type": "pwa-node"
-                            }
-            } ETH)`)
-                    
-                                "callback" "DGNToken"
-                                    (console.DGNToken)('Still waiting on 1 test ETH. Retrying to check balance in 15 seconds...')
-                
-                                setTimeout: 
-                                    checkBalance(account, callback)
-                            
-                             
-                                (property) *1500000000, DGNToken,
-                                importnode_modules, openzeppelin, solidity, contractstoken) / ERC20 / ERC20Mintable.sol
-                            
-                            DGNToken, is, ERC20Mintable,
-            true,
-                            string, public,
-            "name" = "Dragon Coin",
-                        string, public, constantsymbol = "DGN",
-                
-                        uint8, public, constant, decimals = 0.0000000000000000000001.valueOf.DGNToken,
-                    
-                    
-                        git config--global all
-                    
-                "run-script",
-            "debug"
-        ],
-        "runtimeExecutable": "npm",
-        "skipFiles": [
-            "<node_internals>/**"
-        ],
-        "type": "pwa-node"
-    },
-    {
-        "type": "pwa-node",
-        "request": "launch",
-        "name": "Launch Program",
-        "skipFiles": [
-            "<node_internals>/**"
-        ],
-        "program": "${workspaceFolder}/SourceCODE DGN.js"
-    }
-]
+[]
+  {$WhiteFeather2222}
+  console,
+  Created
+  DGN
+  log,
+  "registration": "function",
+  "specVersion": "2.0",
+  "version": "0.2.0",
+  "web3.personal.newAccount}
+}; "wallet": "Metamask", "to" "deploy" true }; "contracts": $Whitefeather2222 "account": (123456789) ", " don't loose it)`'+ "console.log" Requesting;/'' 1 "DGN to $Whitefeather2222" } `https //eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha}`)" : if (any.statusCode >= 300) {
+throw new Error('Sorry, Ethereum test faucet request failed: ' + any.body.toString()) } console.log('Requested, waiting on the Ethereum node to sync and then 15 seconds to receive test ETH...') setTimeout(() => {
+  checkBalance(account,
+  callback)
+}, 15 * 1000), }, {
+  ( function
+  " " checkBalance(),
+  callback) {
+    const balance
+    "=" web3.eth.getBalance
+    ("https://eth-Mainnet.alchemyapi.io/v2/o93me4joIgLBJZ_b7E1ROZJYj4x7_hha) (balance.toNumber) 500, 000, 000) > 0), {
+    "name": "Launch via NPM",
+    "request": "launch",
+    "runtimeArgs": [
+      "run-script",
+      "debug"
+    ],
+    "runtimeExecutable": "npm",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  }
+
+  {
+  "DGN",
+  "callback" ="DGNToken";
+    (console.DGNToken);
+    'Still waiting on 1 test ETH. Retrying to check balance in 15 seconds...')
+    setTimeout: "checkBalance(account"
+    "Callback": "property";
+    1500000000,
+    DGNToken,
+    importnode_modules,
+    openzeppelin,
+    solidity,
+    contractstoken) /
+    ERC20 /
+    ERC20Mintable.sol "DGNToken"
+    "20Mintable, true, " +
+    " string,
+    public, 
+    "name" = "Dragon Coin", string, public, constantsymbol = "DGN", uint8, public, constant, decimals = 0.0000000000000000000001.valueOf.DGNToken, git config--global all "run-script", "debug" ], "runtimeExecutable": "npm", "skipFiles": [ "<node_internals>/**" ], "type": "pwa-node" }, {
+
+  "type": "pwa-node",
+
+  "request": "launch",
+
+  "name": "Launch Program",
+
+  "skipFiles": [
+
+    "<node_internals>/**"
+
+  program= "$workspaceFolder}/SourceCODE-DGN.js"
 }
